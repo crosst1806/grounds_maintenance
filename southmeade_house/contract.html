@@ -1,0 +1,82 @@
+<html>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
+    <head>
+        <title>Southmeade House - Contract</title>
+        <link href="../css/styles.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="header">
+            <h3>UOL - Grounds Maintenance - Mobile Team 2 - Sites</h3>
+            <div id="top_nav">
+                <ul>
+                    <li class="in_line"><a href="../index.html">Home</a></li>
+                    <li class="in_line"><a href="">Team Members</a></li>
+                    <li class="in_line"><a href="../the_arboretum/activitys.html">Sites</a></li>
+                    <li class="in_line"><a href="../activities/glysophate_weed_kill.html">Activities</a></li>
+                    <li class="in_line"><a href="../equipment/index.html">Equipment</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div class="column1" w3-include-html="../includes/site_list.html">
+            </div>
+            <div class="column4">
+                <h3>Southmeade House</h3>
+                <p>33 Stoughton Drive South, Oadby, Leicester, LE2 2RJ</p>
+                    <div id="feature" w3-include-html="./site_description.txt">
+                    </div>
+                <div w3-include-html="../includes/site_features.html">
+                </div>
+                <h3>Site Contract</h3>
+                
+                <h4>Spring</h4>
+                <p>
+                <dl>
+                    <dt>Grass</dt>
+                    <dd>Grass should be cut and clear of debris such as leaves. </dd>
+                    <dt>Weed</dt>
+                    <dd>The site should be weed free.</dd>
+                </dl>
+                </p>
+                <h4>Summer</h4>
+                <h4>Autumn</h4>
+                <h4>Winter</h4>
+            </div>
+        </div>
+        <div id="footer">
+            <p></p>
+        </div>
+    </body>
+<script>
+includeHTML();
+</script>    
+</html>

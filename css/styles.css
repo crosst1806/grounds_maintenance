@@ -1,0 +1,131 @@
+    body {
+        width: 960px;
+        background: white;
+        margin: auto;
+    }
+    #content{
+        overflow: auto;
+    }
+    #top_nav {
+        background: white;
+    }
+    #feature {
+        padding: 8px 8px 8px 8px;    
+        height: 120px;
+        background: white;
+    }
+    #footer {
+        padding: 6px;
+        margin: 10px;
+    }
+    .warning{
+        color: red;
+    }
+    .column1 {
+        width: 240px;
+        margin: 10px 10px 0px 0px;
+        padding: 6px 6px 6px 0px;
+        float: left;
+    }
+    .column2 {
+        width: 260px;
+        margin: 10px;
+        padding: 6px;
+        float: left;
+    }
+    .column3 {
+        width: 260px;
+        margin: 10px;
+        padding: 6px;
+        float: left;
+    }
+    .column4 {
+        width: 600px;
+        margin: 10px;
+        padding: 6px;
+        float: left;
+    }
+    ul {
+        list-style-type: none; 
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    li {
+        margin: 0px 0px 0px 0px;
+    }
+    .in_line {
+        display: inline;
+        list-style-type: none; 
+    }
+    h2, h3 {
+        margin: 10px 10px 10px 0px;
+    }
+    h4 {
+        margin: 6px 6px 6px 6px;
+    }
+    img.small {
+        margin: 6px 6px 6px 6px;
+        width: 100px;
+        height: 100px;
+    }
+    img.small_portrait {
+        margin: 6px 6px 6px 6px;
+        width: 100px;
+        height: 130px;
+    }
+    img.small_landscape {
+        margin: 6px 6px 6px 6px;
+        width: 130px;
+        height: 100px;
+    }
+    img.medium {
+        width: 250px;
+        height: 250px;
+    }
+    img.medium_portrait {
+        width: 250px;
+        height: 310px;
+    }
+    img.medium_landscape {
+        width: 310px;
+        height: 250px;
+    }
+    img.large {
+        width: 500px;
+        height: 500px;
+    }
+    img.large_portrait {
+        width: 500px;
+        height: 670px;
+    }
+    img.large_landscape {
+        width: 670px;
+        height: 500px;
+    }
+    img.feature_photo {
+        width: 620px;
+        height: 400px;
+    }
+    img.float_left {
+        float: left;
+    } 
+    img.float_right {
+        float: right;
+    }
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    .top { vertical-align: top; }
+    .bottom { vertical-align: bottom; }
+    table td {
+        padding: 4px 6px 4px 6px;
+    }
+    
+    table tr.colored {
+            background: #efefef;
+    }
+    p {
+        padding: 8px 8px 8px 8px;
+    }

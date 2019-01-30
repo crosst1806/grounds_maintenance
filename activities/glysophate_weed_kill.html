@@ -1,0 +1,95 @@
+<html>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
+    <head>
+        <title>Grounds Maintenance</title>
+        <link href="../css/styles.css" style="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div id="header">
+            <h3>UOL - Grounds Maintenance - Mobile Team 2 - Activities</h3>
+            <div id="top_nav">
+                <ul>
+                    <li class="in_line"><a href="../index.html">Home</a></li>
+                    <li class="in_line"><a href="">Team Members</a></li>
+                    <li class="in_line"><a href="../college_court/buildings.html">Sites</a></li>
+                    <li class="in_line"><a href="glysophate_weed_kill.html">Activities</a></li>
+                    <li class="in_line"><a href="../equipment/index.html">Equipment</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="content">
+            <div class ="column1" w3-include-html="../includes/activity_list.html"> 
+            </div>
+            <div class="column4">
+                <h3>Apply Glysophate Weed Killer</h3>
+                <p>
+                    This is a regular activity, performed during the growing season, scheduled every 
+                    4 weeks for all our sites. Application is by back pack pump up sprayer. The product 
+                    applied is Glysophate based systemic.
+                </p>
+                <p>Do's and Dont's</p>
+                    <ul>
+                    <li>High Winds will cause spray drift and collateral plant damage. 
+                    <li>Plants must be actively growing so ambient temperature must be above 5<sup>o</sup>C</li>
+                    <li>Heavy or persistent rain will wash product off foliage before it is absorbed.
+                    </ul>
+                <p>Requirements</p>
+                <ol>
+                    <li>Glysophate Weed Killer x 5 Litre Tub</li>
+                    <li>Pesticide Spray Record Sheet.</li>
+                    <li>Pesticide Spray Suit.</li>
+                    <li>Sufficient Water Barrels.</li>
+                    <li>Spare Spray Tips.</li>
+                    <li>1 Litre Clean Water Spray.</li>
+                </ol>
+                <p>Pre Activity</p>
+                    If the sprayer has been previously used with a different product make sure that it is
+                    washed thoroughly first. The dilution ratio for spot spraying is 50:1. Add 200ml of
+                    concentrated product into the measuring phial located in the mouth of the spray pack.
+                    Add water to the spray tank until the 20 litre mark has been reached.
+                <p>During Activity</p>
+                    Both hard areas and soft areas can be treated with this product. Be aware of drift as
+                    neighbouring plants may be affected. Do not over apply. <em>One drop kills</em>.
+                <p>Post Activity</p>
+                Complete the Pesticide Spray Record sheet.
+                Replace weed killer, spray suit and sprayer in chemical cupboard.
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <p></p>
+        </div>
+    </body>
+<script>
+includeHTML();
+</script>    
+</html>
